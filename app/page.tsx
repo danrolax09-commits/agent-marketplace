@@ -275,21 +275,21 @@ export default function Home() {
             <div>
               <h4 style={{ color: '#fff', marginBottom: '1rem' }}>Product</h4>
               <ul style={{ listStyle: 'none', padding: 0 }}>
-                <li style={{ marginBottom: '0.5rem' }}><a href="#features" style={{ color: '#999', textDecoration: 'none' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Features</a></li>
-                <li style={{ marginBottom: '0.5rem' }}><a href="#pricing" style={{ color: '#999', textDecoration: 'none' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Pricing</a></li>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#features" style={{ color: '#999', textDecoration: 'none' }}>Features</a></li>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#pricing" style={{ color: '#999', textDecoration: 'none' }}>Pricing</a></li>
               </ul>
             </div>
             <div>
               <h4 style={{ color: '#fff', marginBottom: '1rem' }}>Company</h4>
               <ul style={{ listStyle: 'none', padding: 0 }}>
-                <li style={{ marginBottom: '0.5rem' }}><a href="#" onClick={(e) => { e.preventDefault(); alert('Contact: support@agentmarketplace.io'); }} style={{ color: '#999', textDecoration: 'none', cursor: 'pointer' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Contact</a></li>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#contact" style={{ color: '#999', textDecoration: 'none' }}>Contact</a></li>
               </ul>
             </div>
             <div>
               <h4 style={{ color: '#fff', marginBottom: '1rem' }}>Legal</h4>
               <ul style={{ listStyle: 'none', padding: 0 }}>
-                <li style={{ marginBottom: '0.5rem' }}><a href="#" onClick={(e) => { e.preventDefault(); alert('Privacy Policy'); }} style={{ color: '#999', textDecoration: 'none', cursor: 'pointer' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Privacy</a></li>
-                <li style={{ marginBottom: '0.5rem' }}><a href="#" onClick={(e) => { e.preventDefault(); alert('Terms of Service'); }} style={{ color: '#999', textDecoration: 'none', cursor: 'pointer' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Terms</a></li>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#privacy" style={{ color: '#999', textDecoration: 'none' }}>Privacy</a></li>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#terms" style={{ color: '#999', textDecoration: 'none' }}>Terms</a></li>
               </ul>
             </div>
           </div>
