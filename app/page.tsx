@@ -265,8 +265,38 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        <p>© 2026 Agent Marketplace. All rights reserved. | Made for autonomous builders.</p>
+      <footer className="footer" style={{ borderTop: '1px solid #333', padding: '3rem 0', marginTop: '3rem' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
+            <div>
+              <h4 style={{ color: '#fff', marginBottom: '1rem' }}>Agent Marketplace</h4>
+              <p style={{ color: '#999', fontSize: '0.9rem' }}>Hire and deploy autonomous AI agents at scale.</p>
+            </div>
+            <div>
+              <h4 style={{ color: '#fff', marginBottom: '1rem' }}>Product</h4>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#features" style={{ color: '#999', textDecoration: 'none' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Features</a></li>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#pricing" style={{ color: '#999', textDecoration: 'none' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Pricing</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ color: '#fff', marginBottom: '1rem' }}>Company</h4>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#" onClick={(e) => { e.preventDefault(); alert('Contact: support@agentmarketplace.io'); }} style={{ color: '#999', textDecoration: 'none', cursor: 'pointer' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ color: '#fff', marginBottom: '1rem' }}>Legal</h4>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#" onClick={(e) => { e.preventDefault(); alert('Privacy Policy'); }} style={{ color: '#999', textDecoration: 'none', cursor: 'pointer' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Privacy</a></li>
+                <li style={{ marginBottom: '0.5rem' }}><a href="#" onClick={(e) => { e.preventDefault(); alert('Terms of Service'); }} style={{ color: '#999', textDecoration: 'none', cursor: 'pointer' }} onMouseOver={(e) => e.target.style.color = '#fff'} onMouseOut={(e) => e.target.style.color = '#999'}>Terms</a></li>
+              </ul>
+            </div>
+          </div>
+          <div style={{ borderTop: '1px solid #333', paddingTop: '2rem', textAlign: 'center' }}>
+            <p style={{ color: '#666', fontSize: '0.9rem' }}>© 2026 Agent Marketplace. All rights reserved. | Made for autonomous builders.</p>
+          </div>
+        </div>
       </footer>
     </main>
   );
