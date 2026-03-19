@@ -19,9 +19,9 @@ export default function RootLayout({
             <div className="logo">AgentHub</div>
             <div className="nav-links">
               <a href="/">Browse</a>
-              <a href="/dashboard">Dashboard</a>
-              <a href="/sell">Sell Agent</a>
-              <a href="/account">Account</a>
+              <a href="#pricing">Dashboard</a>
+              <a href="#features">Sell Agent</a>
+              <a href="#pricing">Account</a>
             </div>
           </div>
         </nav>
