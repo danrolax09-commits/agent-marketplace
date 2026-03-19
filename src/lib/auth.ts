@@ -40,17 +40,17 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user }: any) {
       if (user) {
-        token.id = user.id;
+        token.id = user.id || user.email;
         token.subscription = "free"; // V4: Load from DB
       }
       return token;
     },
-    async session({ session, token }) {
+    async session({ session, token }: any) {
       if (session.user) {
-        session.user.id = token.id as string;
-        session.user.subscription = token.subscription as string;
+        (session.user as any).id = token.id as string;
+        (session.user as any).subscription = token.subscription as string;
       }
       return session;
     },

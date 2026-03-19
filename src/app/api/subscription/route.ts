@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
 
     // TODO: Query user's subscription from DB
     const subscription = {
-      userId: session.user.id,
+      userId: session.user?.email || "unknown",
       tier: "free",
       features: {
         listAgents: 1,
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     
     // TODO: Create Stripe subscription in DB
     const subscription = {
-      userId: session.user.id,
+      userId: session.user?.email || "unknown",
       tier,
       status: "pending_payment",
       stripeSubscriptionId: null,
