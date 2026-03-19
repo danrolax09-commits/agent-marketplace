@@ -1,0 +1,27 @@
+name: Deploy Agent Marketplace
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Deploy to Railway
+        uses: railway-app/actions@v1
+        with:
+          token: ${{ secrets.RAILWAY_TOKEN }}
+          service: agent-marketplace
+          
+      - name: Health Check
+        run: |
+          sleep 10
+          curl https://${{ secrets.RAILWAY_URL_AGENT }}/api/health || exit 1
+          
+      - name: Notify Success
+        if: success()
+        run: echo "✅ Agent Marketplace deployed successfully"

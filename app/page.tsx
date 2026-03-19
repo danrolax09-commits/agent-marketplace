@@ -72,6 +72,66 @@ const mockAgents: Agent[] = [
     sales: 678,
     image: '💬',
   },
+  {
+    id: '7',
+    name: 'Content Writer Pro',
+    description: 'Generates high-quality blog posts, emails, and marketing copy',
+    category: 'Content',
+    price: 14.99,
+    rating: 4.9,
+    sales: 892,
+    image: '✍️',
+  },
+  {
+    id: '8',
+    name: 'Lead Qualifier',
+    description: 'Automatically qualifies and scores sales leads',
+    category: 'Sales',
+    price: 11.99,
+    rating: 4.8,
+    sales: 567,
+    image: '🎯',
+  },
+  {
+    id: '9',
+    name: 'YouTube Optimizer',
+    description: 'Optimizes video titles, descriptions, and tags for maximum views',
+    category: 'Marketing',
+    price: 9.99,
+    rating: 4.7,
+    sales: 445,
+    image: '🎬',
+  },
+  {
+    id: '10',
+    name: 'Code Generator',
+    description: 'Generates production-ready code from natural language',
+    category: 'Development',
+    price: 19.99,
+    rating: 4.9,
+    sales: 723,
+    image: '💻',
+  },
+  {
+    id: '11',
+    name: 'Market Research Bot',
+    description: 'Analyzes competitors and market trends automatically',
+    category: 'Research',
+    price: 16.99,
+    rating: 4.8,
+    sales: 334,
+    image: '📊',
+  },
+  {
+    id: '12',
+    name: 'LinkedIn Post Creator',
+    description: 'Creates viral LinkedIn posts that drive engagement',
+    category: 'Marketing',
+    price: 8.99,
+    rating: 4.9,
+    sales: 612,
+    image: '💼',
+  },
 ];
 
 export default function Home() {
@@ -111,9 +171,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Agents */}
-      <section className="container">
-        <h2 style={{ marginBottom: '2rem', fontSize: '2rem' }}>Featured Agents</h2>
+      {/* Premium Featured Tier */}
+      <section className="container" style={{ marginTop: '3rem', marginBottom: '3rem' }}>
+        <div style={{ background: 'linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%)', borderRadius: '12px', padding: '2rem', color: 'white', textAlign: 'center', marginBottom: '2rem' }}>
+          <h3 style={{ marginBottom: '0.5rem' }}>⭐ Premium Featured Tier</h3>
+          <p style={{ opacity: 0.9 }}>Boost your agent visibility. $99/month = 10x more exposure</p>
+          <button className="btn btn-secondary" style={{ marginTop: '1rem' }}>
+            Upgrade to Featured
+          </button>
+        </div>
+
+        <h2 style={{ marginBottom: '2rem', fontSize: '2rem' }}>Top Agents This Month</h2>
+        <div className="grid">
+          {mockAgents.slice(0, 6).map((agent) => (
+            <div key={agent.id} className="card" style={{ borderTop: '3px solid #ffd700' }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{agent.image}</div>
+              <h3>{agent.name}</h3>
+              <p>{agent.description}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
+                <span className="badge">{agent.category}</span>
+                <span style={{ color: '#666', fontSize: '0.9rem' }}>⭐ {agent.rating}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
+                <span className="price">${agent.price}</span>
+                <span style={{ fontSize: '0.85rem', color: '#999' }}>{agent.sales} sales</span>
+              </div>
+              <button className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>
+                Get Agent
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <h2 style={{ marginTop: '3rem', marginBottom: '2rem', fontSize: '2rem' }}>All Agents</h2>
         <div className="grid">
           {mockAgents.map((agent) => (
             <div key={agent.id} className="card">
