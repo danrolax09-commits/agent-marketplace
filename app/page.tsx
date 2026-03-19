@@ -1,3 +1,4 @@
+import { STRIPE_PRICES, PRICING_TIERS } from '@/lib/pricing-config';
 import React from 'react';
 
 interface Agent {
