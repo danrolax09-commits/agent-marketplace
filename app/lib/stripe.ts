@@ -1,16 +1,17 @@
 import Stripe from 'stripe';
 
-const stripeKey = process.env.STRIPE_SECRET_KEY;
+let stripeClient: Stripe | null = null;
 
-if (!stripeKey) {
-  throw new Error('STRIPE_SECRET_KEY environment variable is not set');
+export function stripe() {
+  if (!stripeClient) {
+    const stripeKey = process.env.STRIPE_SECRET_KEY;
+    if (!stripeKey) {
+      throw new Error('STRIPE_SECRET_KEY environment variable is not set');
+    }
+    stripeClient = new Stripe(stripeKey);
+  }
+  return stripeClient;
 }
-
-const stripe = new Stripe(stripeKey, {
-  apiVersion: '2024-06-20',
-});
-
-export { stripe };
 
 export async function verifyWebhook(body: string, signature: string) {
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -20,7 +21,7 @@ export async function verifyWebhook(body: string, signature: string) {
   }
 
   try {
-    return stripe.webhooks.constructEvent(body, signature, webhookSecret);
+    return stripe().webhooks.constructEvent(body, signature, webhookSecret);
   } catch (error) {
     throw new Error(`Webhook signature verification failed: ${error}`);
   }
